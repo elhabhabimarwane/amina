@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مذكرة حب لعيد ميلاد أمينة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* الأساسيات */
+        :root {
+            --primary: #FF6B8B;
+            --secondary: #FFA3B1;
+            --accent: #FFD166;
+            --dark: #2F3542;
+            --light: #F8F9FA;
+            --text: #333;
+            --gold: #FFD700;
+            --pink: #FF69B4;
+            --purple: #9370DB;
+            --blue: #70A1FF;
+            --green: #7BED9F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f8 100%);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* الهيدر */
+        .header {
+            background: rgb(91, 20, 255);
+            color: rgb(0, 255, 17);
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 3rem;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            transition: all 0.5s ease;
+            object-fit: cover;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* عداد عيد الميلاد */
+        .birthday-countdown {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            min-width: 80px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .countdown-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        /* الأقسام */
+        .section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title i {
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--purple));
+            border-radius: 3px;
+        }
+
+        /* رسالة الحب */
+        .love-letter {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-letter:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,107,139,0.1)" d="M30,50 Q50,30 70,50 Q50,70 30,50"/></svg>');
+            opacity: 0.3;
+        }
+
+        .love-letter p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        /* معرض الصور */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1/1;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* معلومات عيد الميلاد */
+        .birthday-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .birthday-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 100px;
+            max-width:  550px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .birthday-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--primary), var(--purple));
+        }
+
+        .birthday-date {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .birthday-date i {
+            color: var(--gold);
+        }
+
+        .birthday-plans {
+            margin-top: 1.5rem;
+        }
+
+        .birthday-plans h4 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .birthday-plans i {
+            color: var(--primary);
+        }
+
+        .birthday-plans ul {
+            list-style: none;
+        }
+
+        .birthday-plans li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .birthday-plans li:hover {
+            background: rgba(255, 107, 139, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* قسم الموسيقى */
+        .music-player {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.3);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.4);
+        }
+
+        .song-info {
+            flex: 1;
+        }
+
+        .song-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .song-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .playlist {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 107, 139, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .song {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .song:hover {
+            background: rgba(255, 107, 139, 0.1);
+        }
+
+        .song i {
+            color: var(--primary);
+        }
+
+        .song.active {
+            background: rgba(255, 107, 139, 0.2);
+            font-weight: bold;
+        }
+
+        /* قسم التواصل */
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            min-width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--purple));
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .contact-card p, .contact-card a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* الفوتر */
+        .footer {
+            background: linear-gradient(135deg, var(--dark), #1a1a1a);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .hearts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 1rem 0;
+        }
+
+        .hearts i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hearts i:nth-child(1) { animation-delay: 0s; }
+        .hearts i:nth-child(2) { animation-delay: 0.5s; }
+        .hearts i:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+
+        /* تأثيرات الحركة */
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .countdown-box {
+                min-width: 70px;
+                padding: 0.8rem;
+            }
+            
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .gallery-img {
+                margin-top: 0px;
+                height: 100%;
+            }
+            .countdown-box {
+                min-width: 60px;
+                padding: 0.5rem;
+            }
+            
+            .countdown-value {
+                font-size: 1.2rem;
+            }
+            
+                    .section{
+            margin-top: 0px;
+        }
+            .countdown-label {
+                font-size: 0.7rem;
+                bottom: -15px;
+            }
+            .fad{
+                color: var(--dark);
+            }
+            .fa-images{
+                color: var(--purple);
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+                margin-top: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header class="header fade-in">
+        <div class="profile-container">
+            <img src="images/profile.jpg" alt="أمينة" class="profile-img">
+            <h1>أمينة الغريبي</h1>
+            <p>عيد ميلاد سعيد، حبيبة قلبي</p>
+            
+            <div class="birthday-countdown">
+                <div class="countdown-title" >عيد  ميلادك ياحبيبتي بعد   </div>
+                <div class="countdown-timer">
+                    <div class="countdown-box">
+                        <span class="countdown-value" id="days">00</span>
+                        <span class="countdown-label">أيام</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label">ساعات</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label">دقائق</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label">ثواني</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- رسالة الحب -->
+    <section class="section fade-in">
+       
+        <div class="love-letter">
+            <p>عزيزتي أمينة،</p>
+            <p>في كل مرة أرى فيها ابتسامتك، يمتلئ قلبي بالدفء والسعادة. أنتِ أكثر من مجرد حبيبة، أنتِ  كل شيء جميل في حياتي.</p>
+            <p>هذه المذكرة سنقوم بترسيخ كل دكرياتنا الجميلة تعبر عن جزء بسيط من مشاعري التي لا يمكن للكلمات أن تصفها.</p>
+            <p>مع كل نبضة من قلبي، أحبك أكثر.</p>
+            <p class="signature">حبيبكــ مــروان</p>
+        </div>
+    </section>
+
+    <!-- معرض الصور -->
+    <section class="section fade-in">
+       
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/img1.jpg" alt="أمينة تلعب كرة القدم" class="gallery-img">
+                <div class="gallery-caption">أمينة تلعب كرة القدم</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img2.jpg" alt="لحظة جميلة" class="gallery-img">
+                <div class="gallery-caption">لحظة جميلة معاً</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img3.jpg" alt="ابتسامتها الساحرة" class="gallery-img">
+                <div class="gallery-caption">ابتسامتها الساحرة</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img4.jpg" alt="في الملعب" class="gallery-img">
+                <div class="gallery-caption">في الحديقة</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img5.jpg" alt="لحظة تلقائية" class="gallery-img">
+                <div class="gallery-caption"> امينة في المنزل</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img6.jpg" alt="مع الأصدقاء" class="gallery-img">
+                <div class="gallery-caption">ميسي في ايامه  </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img7.jpg" alt="في المناسبات" class="gallery-img">
+                <div class="gallery-caption">في المناسبات</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img8.jpg" alt="أجمل امرأة" class="gallery-img">
+                <div class="gallery-caption">أجمل امرأة</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- عيد الميلاد -->
+    <section class="section fade-in">
+        <h2 class="section-title"><i class="fas fa-birthday-cake"></i> عيد ميلادها</h2>
+        <div class="birthday-info">
+            <div class="birthday-card">
+                <div class="birthday-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>5 ديسمبر</span>
+                </div>
+                <p>هذا اليوم الخاص الذي أتطلع إليه كل عام، لأن العالم يصبح أجمل بوجودك فيه. كل عام وأنتِ نور حياتي وسعادتي.</p>
+                
+                <div class="birthday-plans">
+                    <h4><i class="fas fa-gifts"></i> خطط العيد</h4>
+                    <ul>
+                        <li><i class="fas fa-gift"></i> مفاجأة خاصة جداً</li>
+                        <li><i class="fas fa-futbol"></i> مباراة كرة قدم خاصة</li>
+                        <li><i class="fas fa-music"></i> أمسية موسيقية رومانسية</li>
+                        <li><i class="fas fa-camera"></i> جلسة تصوير تذكارية</li>
+                        <li><i class="fas fa-heart"></i> عشاء رومانسي خاص</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الموسيقى -->
+    <section class="section fade-in">
+        <h2 class="section-title"><i class="fas fa-music"></i> أغانينا</h2>
+        <div class="music-player">
+            <div class="player-controls">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+                <div class="song-info">
+                    <h3>أغانينا الخاصة</h3>
+                    <p>قائمة تشغيل من أجلك</p>
+                </div>
+            </div>
+            <div class="playlist">
+                <div class="song active">
+                    <i class="fas fa-music"></i>
+                    <span>أغنية حبك - أم كلثوم</span>
+                </div>
+                <div class="song">
+                    <i class="fas fa-music"></i>
+                    <span>يا حبيبتي - عبد الحليم</span>
+                </div>
+                <div class="song">
+                    <i class="fas fa-music"></i>
+                    <span>حبيتك - كاظم الساهر</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التواصل -->
+    <section class="section fade-in">
+        <h2 class="section-title"><i class="fas fa-address-book"></i> تواصل معي</h2>
+        <div class="contact-section">
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>هاتفك حبيبتي</h3>
+                <p>+212 701-879655</p>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-instagram"></i>
+                <h3>إنستغرام مــروان</h3>
+                <a href="https://www.instagram.com/mar.1_officiel?igsh=bmMyeDAxZGZ5ejNw" target="_blank">mar.1_officiel</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-instagram"></i>
+                <h3>إنستغرام أمينة</h3>
+                <a href="https://www.instagram.com/amina_ghribi_?igsh=MXR3emVncDFtYmV2bg==" target="_blank">amina_ghribi_</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer fade-in">
+        <div class="hearts">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+        </div>
+        <p>أمينة الغريبي، مهما كتبت لن أوفيك حقك، لكن أعلمي أنك كل شيء في حياتي.</p>
+        <p>كل عام وأنتِ نور حياتي، وسعادتي، وحبي الأبدي.</p>
+    </footer>
+
+    <script>
+        // عداد عيد الميلاد
+        function updateCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            let birthday = new Date(currentYear, 11, 5); // 5 ديسمبر
+            
+            if (now > birthday) {
+                birthday = new Date(currentYear + 1, 11, 5);
+            }
+            
+            const diff = birthday - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // مشغل الموسيقى
+        const playBtn = document.querySelector('.play-btn');
+        const songs = document.querySelectorAll('.song');
+        let isPlaying = false;
+        
+        playBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        songs.forEach(song => {
+            song.addEventListener('click', function() {
+                songs.forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                // هنا يمكنك تغيير الأغنية حسب الاختيار
+            });
+        });
+
+        // تأثيرات الصور
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const img = this.querySelector('.gallery-img');
+                img.style.transform = 'scale(1.1)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const img = this.querySelector('.gallery-img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+
+        // تأثيرات الحركة عند التمرير
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s ease forwards';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
